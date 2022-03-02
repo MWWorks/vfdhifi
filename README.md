@@ -25,13 +25,9 @@ This is the service that monitors the equalizers and then renders any changes in
 
 ## hifimpd.py
 
-This actually runs the display - polling Mopidy (via MPD) for updates - and handles the button presses. Not it uses two methods for drawing text:
+This actually runs the display - polling Mopidy (via MPD) for updates - and handles the button presses. Note it uses two methods for drawing text:
 
 * Native text display of the VFD
-* Rendering text into a bitmap and sending that
+* Rendering text into a bitmap and sending that, via this method from Dan Bader https://gist.github.com/dbader/5488053
 
-The latter was to be able to display full unicode characters for eg CJK song and artist names. It uses this library:
-
-https://gist.github.com/dbader/5488053
-
-I tried many fonts but ARIALUNI seems to render best in mono and have the fullest character set.
+The latter was to be able to display full unicode characters for eg CJK song and artist names. I tried many fonts but ARIALUNI seems to render best in mono and have the fullest character set.
