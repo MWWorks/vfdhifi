@@ -22,3 +22,16 @@ This is the driver for the VFD display - it's specifically for a Futaba GP1212A0
 ## hifieq.py
 
 This is the service that monitors the equalizers and then renders any changes in the form of adjustments to the alsa equalizer or mbeq plugin - I had better luck with the 10-band equal plugin. You may need a bit of familiarity/homework with ALSA/asound.conf to get this working.
+
+## hifimpd.py
+
+This actually runs the display - polling Mopidy (via MPD) for updates - and handles the button presses. Not it uses two methods for drawing text:
+
+* Native text display of the VFD
+* Rendering text into a bitmap and sending that
+
+The latter was to be able to display full unicode characters for eg CJK song and artist names. It uses this library:
+
+https://gist.github.com/dbader/5488053
+
+I tried many fonts but ARIALUNI seems to render best in mono and have the fullest character set.
